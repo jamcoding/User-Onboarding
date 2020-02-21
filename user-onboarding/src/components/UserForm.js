@@ -39,6 +39,13 @@ const UserForm = ({ touched, errors, status }) => {
                 </label>
                 <button>Submit</button>
             </Form>
+            {users.name && (
+                <ul key={users.id}>
+                    <li>{users.name}</li>
+                    <li>{users.email}</li>
+                    <li>{users.password}</li>
+                </ul>
+            )}
         </div>
     )
 }
