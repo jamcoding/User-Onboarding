@@ -3,6 +3,8 @@ import axios from 'axios';
 import { withFormik, Form, Field } from 'formik';
 import * as yup from 'yup';
 
+import './UserForm.css';
+
 const UserForm = ({ touched, errors, status }) => {
     console.log("This is our status", status);
     const [users, setUsers] = useState({});
@@ -18,7 +20,7 @@ const UserForm = ({ touched, errors, status }) => {
                     Name:
                     <Field type="text" name="name" placeholder="Name" />
                     {touched.name && errors.name && (
-                        <p>{errors.name}</p>
+                        <p className="error">{errors.name}</p>
                     )}
                 </label>
                 <label>
@@ -30,22 +32,24 @@ const UserForm = ({ touched, errors, status }) => {
                     <Field type="password" name="password" placeholder="Password" />
                 </label>
                 <label>
-                    Terms of Service
                     <Field type="checkbox" name="terms" />
                     <span className="checkmark" />
+                    Terms of Service
                     {touched.terms && errors.terms && (
-                        <p>{errors.terms}</p>
+                        <p className="error">{errors.terms}</p>
                     )}
                 </label>
                 <button>Submit</button>
             </Form>
-            {users.name && (
-                <ul key={users.id}>
-                    <li>{users.name}</li>
-                    <li>{users.email}</li>
-                    <li>{users.password}</li>
-                </ul>
-            )}
+            <div className="userInfo">
+                {users.name && (
+                    <ul key={users.id}>
+                        <li>Name: {users.name}</li>
+                        <li>Email: {users.email}</li>
+                        <li>Password: {users.password}</li>
+                    </ul>
+                )}
+            </div>
         </div>
     )
 }
