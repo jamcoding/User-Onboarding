@@ -1,0 +1,35 @@
+ul {
+    margin: 15px 0px;
+}
+
+li {
+    list-style-type: none;
+    padding: 5px 0px;
+}
+
+form {
+    margin: 40px auto 60px;
+    padding: 20px;
+    border: thin solid black;
+    border-radius: 10px;
+    width: 50%;
+}
+
+form label {
+    display: block;
+    padding-bottom: 20px;
+}
+
+form .error {
+    color: red;
+    display: block;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.userInfo {
+    margin: 20px auto;
+    border: thin solid black;
+    border-radius: 5px;
+    width: 30%;
+}
